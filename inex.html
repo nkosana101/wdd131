@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 131 – Dynamic Web Fundamentals – Nkosana Dlamini</title>
+    <meta name="description" content="WDD 131 – Dynamic Web Fundamentals – Nkosana Dlamini. This page showcases a personal profile with dynamic content, web development fundamentals, and responsive design." />
+    <meta name="author" content="Nkosana Dlamini" />
+
+    <!-- Google Fonts API -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles/base.css" />
+
+    <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
-    <h1>WDD 131 - Nkosana </h1>
-    
+    <header>
+        <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
+        <nav>
+            <a href="https://www.linkedin.com/in/nkosana-dlamini-7288a667" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://byupw.instructure.com/" target="_blank" rel="noopener noreferrer">Canvas</a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/Mosiah/2?lang=eng&id=p17#p17" target="_blank" rel="noopener noreferrer">Scripture</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Final Project</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Nkosana Dlamini</h1>
+
+        <section class="card">
+            <h2>About Me</h2>
+            <div class="card-content">
+                <p>
+                    Hello! I'm Nkosana Dlamini, a passionate web developer with a love for
+                    clean code and thoughtful design. I enjoy learning new technologies
+                    and applying them to solve real-world problems. Currently, I'm
+                    diving deeper into dynamic web fundamentals and responsive layouts.
+                </p>
+                <img src="images/nkosana-dlamini.jpg" alt="Portrait of Nkosana Dlamini" />
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>My Interests</h2>
+            <div class="card-content">
+                <img src="https://picsum.photos/id/1015/300/200" alt="Scenic view of mountains" />
+                <p>
+                    I'm fascinated by the intersection of design and technology. In my
+                    free time, I enjoy hiking, playing soccer, and exploring new places.
+                    I also love reading about emerging web trends and contributing to
+                    open-source projects whenever I can.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy; <span id="2026"></span> Nkosana Dlamini · Johannesburg/South Africa
+        </p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
 </html>
