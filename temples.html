@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A gallery of temples from around the world.">
+  <meta name="author" content="Your Name">
+  <title>Temple Album</title>
+
+  <!-- CSS: mobile-first order — normalize, then base (small), then larger -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- Deferred script so it runs after the HTML is parsed -->
+  <script src="scripts/temples.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <p class="site-title">Temple Album</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="temples.html?filter=old">Old</a></li>
+        <li><a href="temples.html?filter=new">New</a></li>
+        <li><a href="temples.html?filter=large">Large</a></li>
+        <li><a href="temples.html?filter=small">Small</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Temple Album</h1>
+
+    <figure>
+      <img src="images/placeholder-temple.webp" alt="Placeholder image of a temple" width="400" height="300" loading="lazy">
+      <figcaption>Salt Lake Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/placeholder-temple.webp" alt="Placeholder image of a temple" width="400" height="300" loading="lazy">
+      <figcaption>Provo Utah Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/placeholder-temple.webp" alt="Placeholder image of a temple" width="400" height="300" loading="lazy">
+      <figcaption>Johannesburg South Africa Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/placeholder-temple.webp" alt="Placeholder image of a temple" width="400" height="300" loading="lazy">
+      <figcaption>São Paulo Brazil Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/placeholder-temple.webp" alt="Placeholder image of a temple" width="400" height="300" loading="lazy">
+      <figcaption>Tokyo Japan Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/placeholder-temple.webp" alt="Placeholder image of a temple" width="400" height="300" loading="lazy">
+      <figcaption>Accra Ghana Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/placeholder-temple.webp" alt="Placeholder image of a temple" width="400" height="300" loading="lazy">
+      <figcaption>Rome Italy Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/placeholder-temple.webp" alt="Placeholder image of a temple" width="400" height="300" loading="lazy">
+      <figcaption>Paris France Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/placeholder-temple.webp" alt="Placeholder image of a temple" width="400" height="300" loading="lazy">
+      <figcaption>Apia Samoa Temple</figcaption>
+    </figure>
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="currentyear"></span> | Your Name | South Africa
+    </p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>

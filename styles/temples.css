@@ -1,0 +1,157 @@
+/* ---------- Google Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lato:wght@300;400;700&display=swap');
+
+/* ---------- Design Tokens ---------- */
+:root {
+  --primary:   #6B1D2C;   /* deep maroon */
+  --accent:    #C9A227;   /* temple gold */
+  --nav-bg:    #3F0F18;   /* dark maroon */
+  --bg:        #FDF8F0;   /* warm cream */
+  --card-bg:   #FFFFFF;
+  --text:      #2C2C2C;
+  --shadow:    0 4px 10px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 18px rgba(0, 0, 0, 0.20);
+}
+
+/* ---------- Base Reset & Body ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Lato', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+/* ---------- Header ---------- */
+header {
+  background-color: var(--nav-bg);
+  padding: 1rem 1rem 0.5rem;
+}
+
+.site-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  letter-spacing: 2px;
+  text-align: center;
+  color: var(--accent);
+  margin: 0 0 0.75rem;
+}
+
+/* ---------- Navigation (Flex) ---------- */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  background-color: var(--accent);
+  color: var(--nav-bg);
+  outline: none;
+}
+
+/* ---------- Main (limited width, centered, Grid layout) ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+
+  /* Mobile: single column */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+main h1 {
+  grid-column: 1 / -1;                 /* span all columns */
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--primary);
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* ---------- Figures / Cards ---------- */
+figure {
+  margin: 0;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+figure:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+figcaption {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-align: center;
+  color: var(--primary);
+  padding: 0.75rem 1rem;
+  background-color: var(--card-bg);
+  letter-spacing: 0.5px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background-color: var(--nav-bg);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+footer span#currentyear {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  figure,
+  nav a { transition: none; }
+  figure:hover { transform: none; }
+}
