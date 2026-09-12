@@ -16,6 +16,7 @@
 body {
   margin: 0;
   /* Fixed the broken Google Fonts snippet here */
+  
   font-family: 'Roboto', 'Inter', Arial, sans-serif; 
   color: var(--text-color);
   background-color: var(--background-color);
