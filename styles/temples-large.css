@@ -1,4 +1,4 @@
-/* ---------- Larger screens (tablet / desktop) ---------- */
+
 @media only screen and (min-width: 700px) {
 
   header {
@@ -20,7 +20,6 @@
   }
 
   main {
-    /* Multi-column responsive grid */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     padding: 2.5rem 2rem;
