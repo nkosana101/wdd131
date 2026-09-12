@@ -48,14 +48,14 @@ nav ul {
 
 nav a {
   color: #fff;
-  text-decoration: none;
-  padding: 0.5rem 0.75rem;
+  text-decoration: center;
+  padding: 1rem;
   border-radius: 0.25rem;
   transition: background-color 0.2s;
 }
 
 nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Subtle hover instead of solid white */
+  border: 1
 }
 
 /* --- 4. Main Content --- */
