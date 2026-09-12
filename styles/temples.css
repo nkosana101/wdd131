@@ -1,157 +1,131 @@
-/* ---------- Google Fonts ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lato:wght@300;400;700&display=swap');
-
-/* ---------- Design Tokens ---------- */
+/* --- 1. Variables (Updated to match the screenshot's purple) --- */
 :root {
-  --primary:   #6B1D2C;   /* deep maroon */
-  --accent:    #C9A227;   /* temple gold */
-  --nav-bg:    #3F0F18;   /* dark maroon */
-  --bg:        #FDF8F0;   /* warm cream */
-  --card-bg:   #FFFFFF;
-  --text:      #2C2C2C;
-  --shadow:    0 4px 10px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 18px rgba(0, 0, 0, 0.20);
+  --primary-color: #4a0e78; /* Changed to match the purple in your screenshot */
+  --secondary-color: #f4f4f4;
+  --text-color: #222;
+  --background-color: #fff;
+  --accent-color: #f9f9f9; /* Light gray for card hover effect if needed */
+  --max-width: 1100px;
 }
 
-/* ---------- Base Reset & Body ---------- */
-*,
-*::before,
-*::after { box-sizing: border-box; }
+/* --- 2. Global Reset & Body --- */
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  font-family: 'Lato', system-ui, sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
+  /* Fixed the broken Google Fonts snippet here */
+  font-family: 'Roboto', 'Inter', Arial, sans-serif; 
+  color: var(--text-color);
+  background-color: var(--background-color);
   line-height: 1.6;
-  color: var(--text);
-  background-color: var(--bg);
 }
 
-/* ---------- Header ---------- */
+/* --- 3. Header (Flex layout to match screenshot) --- */
 header {
-  background-color: var(--nav-bg);
-  padding: 1rem 1rem 0.5rem;
-}
-
-.site-title {
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: 1.75rem;
-  letter-spacing: 2px;
-  text-align: center;
-  color: var(--accent);
-  margin: 0 0 0.75rem;
-}
-
-/* ---------- Navigation (Flex) ---------- */
-nav ul {
-  list-style: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1rem 2rem;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between; /* Pushes title left, nav right */
   align-items: center;
-  gap: 0.25rem;
-  padding: 0;
+}
+
+header h1 {
   margin: 0;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: #FFFFFF;
+  color: #fff;
   text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
 }
 
-nav a:hover,
-nav a:focus-visible {
-  background-color: var(--accent);
-  color: var(--nav-bg);
-  outline: none;
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Subtle hover instead of solid white */
 }
 
-/* ---------- Main (limited width, centered, Grid layout) ---------- */
+/* --- 4. Main Content --- */
 main {
-  max-width: 1100px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1.5rem 1rem;
+  padding: 2rem 1.5rem;
+  display: block; /* Changed from grid to block since we use a grid inside */
+}
 
-  /* Mobile: single column */
+main h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+/* --- 5. The Grid / Cards (3 columns like the screenshot) --- */
+.cards {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+  /* Forces exactly 3 columns on desktop, drops to 1 on mobile */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 2rem; 
 }
 
-main h1 {
-  grid-column: 1 / -1;                 /* span all columns */
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: 2rem;
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.card {
+  background-color: transparent; /* Removed the accent box to match screenshot */
+  padding: 0;
   text-align: center;
-  color: var(--primary);
-  letter-spacing: 1px;
-  margin: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* ---------- Figures / Cards ---------- */
-figure {
-  margin: 0;
-  background-color: var(--card-bg);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-figure:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-figure img {
-  display: block;
+.card img {
   width: 100%;
-  height: auto;
+  height: 180px; /* Uniform height */
+  object-fit: cover; /* Prevents stretching */
+  display: block;
 }
 
-figcaption {
-  font-family: 'Cinzel', serif;
-  font-weight: 600;
-  font-size: 1.05rem;
-  text-align: center;
-  color: var(--primary);
-  padding: 0.75rem 1rem;
-  background-color: var(--card-bg);
-  letter-spacing: 0.5px;
+.card p {
+  margin-top: 0.5rem;
+  color: var(--primary-color); /* Text matches the purple theme */
+  font-size: 1rem;
 }
 
-/* ---------- Footer ---------- */
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* --- 6. Footer --- */
 footer {
-  background-color: var(--nav-bg);
-  color: #FFFFFF;
+  background-color: var(--primary-color);
+  color: #fff;
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  padding: 1.5rem 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
 }
 
 footer p {
   margin: 0.25rem 0;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-footer span#currentyear {
-  font-weight: 700;
-  color: var(--accent);
-}
-
-/* ---------- Reduced Motion ---------- */
-@media (prefers-reduced-motion: reduce) {
-  figure,
-  nav a { transition: none; }
-  figure:hover { transform: none; }
 }
