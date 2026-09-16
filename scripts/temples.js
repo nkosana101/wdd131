@@ -24,3 +24,8 @@ if (menuButton && primaryNav) {
     menuButton.setAttribute('aria-expanded', String(isOpen));
   });
 }
+document.querySelectorAll(".card img").forEach((img) => {
+  img.addEventListener("error", () => {
+    img.alt = "Image unavailable";
+  });
+});
