@@ -1,97 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Temple Album | Nkosana Dlamini</title>
-  <meta name="description" content="A photo album of temples from around the world.">
-  <meta name="author" content="Nkosana Dlamini">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Temple Album - WDD 131 - Nkosana Dlamini</title>
 
-  <!-- Required CSS files -->
-  <link rel="stylesheet" href="styles/temples.css">
-  <link rel="stylesheet" href="styles/temples-large.css">
+    <meta name="description" content="Temple Album featuring temples of The Church of Jesus Christ of Latter-day Saints, created for WDD 131 by Nkosana Dlamini.">
 
-  <!-- Required JS files -->
-  <script src="scripts/getdates.js" defer></script>
-  <script src="scripts/temples.js" defer></script>
+    <meta name="author" content="Nkosana Dlamini">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/temples-large.css">
+
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/temples.js" defer></script>
 </head>
+
 <body>
 
-  <header>
-    <h1>Temple Album</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Old</a>
-      <a href="#">New</a>
-      <a href="#">Large</a>
-      <a href="#">Small</a>
-    </nav>
-  </header>
+    <header>
+        <span id="course-title">Temple Album</span>
 
-  <main>
-    <h1>Nkosana Dlamini</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Old</a>
+            <a href="#">New</a>
+            <a href="#">Large</a>
+            <a href="#">Small</a>
+        </nav>
+    </header>
 
-    <figure>
-      <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple in Salt Lake City, Utah" loading="lazy" width="400" height="250">
-      <figcaption>Salt Lake Temple</figcaption>
-    </figure>
+    <main>
+        <h1>Nkosana Dlamini</h1>
 
-    <figure>
-      <img src="images/johannesburg-temple.jpg" alt="Johannesburg Temple in Johannesburge, South Africa" loading="lazy" width="400" height="250">
-      <figcaption>Johannesburg Temple</figcaption>
-    </figure>
+        <section class="temple-grid">
 
-    <figure>
-      <img src="images/accra-ghana-temple.jpg" alt="Accra Ghana Temple in Accra, Ghana" loading="lazy" width="400" height="250">
-      <figcaption>Accra Ghana Temple</figcaption>
-    </figure>
+            <figure>
+                <img src="images/temple1.jpg" alt="Salt Lake Temple">
+                <figcaption>Salt Lake Temple</figcaption>
+            </figure>
 
-    <figure>
-      <img src="images/apia-samoa-temple.jpg" alt="Apia Samoa Temple in Apia, Samoa" loading="lazy" width="400" height="250">
-      <figcaption>Apia Samoa Temple</figcaption>
-    </figure>
+            <figure>
+                <img src="images/temple2.jpg" alt="Johannesburg South Africa Temple">
+                <figcaption>Johannesburg South Africa Temple</figcaption>
+            </figure>
 
-    <figure>
-      <img src="images/paris-france-temple.jpg" alt="Paris France Temple in Paris, France" loading="lazy" width="400" height="250">
-      <figcaption>Paris France Temple</figcaption>
-    </figure>
+            <figure>
+                <img src="images/temple3.jpg" alt="Tokyo Japan Temple">
+                <figcaption>Tokyo Japan Temple</figcaption>
+            </figure>
 
-    <figure>
-      <img src="images/rome-italy-temple.jpg" alt="Rome Italy Temple in Rome, Italy" loading="lazy" width="400" height="250">
-      <figcaption>Rome Italy Temple</figcaption>
-    </figure>
+            <figure>
+                <img src="images/temple4.jpg" alt="Sao Paulo Brazil Temple">
+                <figcaption>Sao Paulo Brazil Temple</figcaption>
+            </figure>
 
-    <figure>
-      <img src="images/sao-paulo-brazil-temple.jpg" alt="Sao Paulo Brazil Temple in Sao Paulo, Brazil" loading="lazy" width="400" height="250">
-      <figcaption>Sao Paulo Brazil Temple</figcaption>
-    </figure>
+            <figure>
+                <img src="images/temple5.jpg" alt="Rome Italy Temple">
+                <figcaption>Rome Italy Temple</figcaption>
+            </figure>
 
-    <figure>
-      <img src="images/provo-utah-temple.jpg" alt="Provo Temple in Provo, Utah" loading="lazy" width="400" height="250">
-      <figcaption>Provo Temple</figcaption>
-    </figure>
+            <figure>
+                <img src="images/temple6.jpg" alt="Accra Ghana Temple">
+                <figcaption>Accra Ghana Temple</figcaption>
+            </figure>
 
-    <figure>
-      <img src="images/tokyo-japan-temple.jpg" alt="Tokyo Japan Temple in Tokyo, Japan" loading="lazy" width="400" height="250">
-      <figcaption>Tokyo Japan Temple</figcaption>
-    </figure>
-  </main>
+            <figure>
+                <img src="images/temple7.jpg" alt="Paris France Temple">
+                <figcaption>Paris France Temple</figcaption>
+            </figure>
 
-  <footer>
-    <p>&copy; <span id="currentyear"></span> Nkosana Dlamini | South Africa</p>
-    <p id="lastModified"></p>
-    <p>
-      <a href="https://www.linkedin.com/in/nkosana-dlamini-7288a667" target="_blank" rel="noopener">LinkedIn</a> |
-      <a href="https://byupw.instructure.com/" target="_blank" rel="noopener">Canvas</a> |
-      <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/Mosiah/2?lang=eng&id=p17#p17" target="_blank" rel="noopener">Scripture</a> |
-      <a href="#" target="_blank" rel="noopener">Final Project</a>
-    </p>
-  </footer>
+            <figure>
+                <img src="images/temple8.jpg" alt="Apia Samoa Temple">
+                <figcaption>Apia Samoa Temple</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/temple9.jpg" alt="Provo Utah Temple">
+                <figcaption>Provo Utah Temple</figcaption>
+            </figure>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy; <span id="currentYear"></span> Nkosana Dlamini · South Africa
+        </p>
+
+        <p id="lastModified"></p>
+    </footer>
 
 </body>
 </html>
