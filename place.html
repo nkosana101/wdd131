@@ -3,59 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brazil – WDD 131 Place Page</title>
-  <meta name="description" content="A responsive place page about Brazil featuring country data, weather, and a wind chill calculation.">
-  <meta name="author" content="Nkosana Dlamini">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
+  <meta name="description" content="Explore South Africa — a diverse nation of mountains, wildlife, and cultures. Quick facts plus a snapshot of weather conditions and wind chill.">
+  <meta name="author" content="Your Name">
+  <title>South Africa | A World in One Country</title>
   <link rel="stylesheet" href="styles/place.css">
   <script src="scripts/place.js" defer></script>
 </head>
 <body>
+
   <header>
-    <h1>Brazil</h1>
+    <h1>South Africa</h1>
+    <p class="tagline">A World in One Country</p>
   </header>
 
+  <div class="hero">
+    <img
+      src="images/hero-large.webp"
+      srcset="images/hero-small.webp   480w,
+              images/hero-medium.webp  800w,
+              images/hero-large.webp  1600w"
+      sizes="(min-width: 1100px) 1100px, 100vw"
+      alt="Table Mountain rising above Cape Town with a colourful sunset over the Atlantic Ocean"
+      width="1600" height="900">
+  </div>
+
   <main>
-    <picture class="hero">
-      <source srcset="images/brazil-hero-small.webp" media="(max-width: 640px)">
-      <source srcset="images/brazil-hero-large.webp" media="(min-width: 641px)">
-      <img src="images/brazil-hero-large.webp"
-           alt="Rio de Janeiro coastline with mountains in the background"
-           width="1600" height="900">
-    </picture>
 
-    <section class="data">
-      <h2>Data</h2>
-      <ul>
-        <li><span class="label">Area:</span> 8,515,767 km²</li>
-        <li><span class="label">Population:</span> 214,326,223</li>
-        <li><span class="label">Capital:</span> Brasília</li>
-        <li><span class="label">Language:</span> Portuguese</li>
-        <li><span class="label">Currency:</span> Real (BRL)</li>
-        <li><span class="label">Time Zone:</span> UTC−03:00</li>
-      </ul>
+    <section class="card data" aria-labelledby="data-heading">
+      <h2 id="data-heading">Data</h2>
+      <dl>
+        <dt>Area</dt>
+        <dd>1,221,037 km²</dd>
+        <dt>Population</dt>
+        <dd>60,414,495</dd>
+        <dt>Capital</dt>
+        <dd>Pretoria, Cape Town, Bloemfontein</dd>
+        <dt>Languages</dt>
+        <dd>12 official languages, including Zulu, Xhosa, Afrikaans, English</dd>
+        <dt>Currency</dt>
+        <dd>South African rand (R)</dd>
+        <dt>Time Zone</dt>
+        <dd>UTC+2 (SAST)</dd>
+      </dl>
     </section>
 
-    <section class="weather">
-      <h2>Weather</h2>
-      <img class="weather-icon" src="images/partly-cloudy.svg"
-           alt="Partly cloudy" width="48" height="48">
-      <ul>
-        <li><span class="label">Temperature:</span> 8 °C</li>
-        <li><span class="label">Conditions:</span> Partly Cloudy</li>
-        <li><span class="label">Wind:</span> 10 km/h</li>
-        <li><span class="label">Wind Chill:</span> <span id="windchill"></span></li>
-      </ul>
+    <section class="card weather" aria-labelledby="weather-heading">
+      <h2 id="weather-heading">Weather</h2>
+      <img class="weather-icon" src="images/weather.svg" alt="Partly cloudy" width="64" height="64">
+      <dl>
+        <dt>Temperature</dt>
+        <dd>8 °C</dd>
+        <dt>Conditions</dt>
+        <dd>Partly Cloudy</dd>
+        <dt>Wind</dt>
+        <dd>12 km/h</dd>
+        <dt>Wind Chill</dt>
+        <dd id="windchill"></dd>
+      </dl>
     </section>
+
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Nkosana Dlamini · South Africa</p>
-    <p id="lastModified"></p>
+    <p>&copy; <span id="currentYear"></span> | Your Name | South Africa</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
   </footer>
+
 </body>
 </html>
