@@ -27,8 +27,10 @@ header {
 }
 
 .logo {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 0.5rem;
 }
 
 header h1 {
