@@ -81,7 +81,7 @@ header::after {
 
 header h1 {
     font-family: var(--font-head);
-    font-size: clamp(2rem, 5vw, 2.75rem);
+    font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: .01em;
     margin: 0;
@@ -142,7 +142,9 @@ section h2 {
 section h2::before {
     content: counter(section);
     flex: 0 0 auto;
-    display: grid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     place-items: center;
     width: 2.2rem;
     height: 2.2rem;
