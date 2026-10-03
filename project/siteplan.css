@@ -44,7 +44,7 @@ body {
 
 header {
     position: relative;
-    padding: 3rem 1rem 3.5rem;
+    padding: 2rem 1rem 2.25rem;
     text-align: center;
     color: var(--white);
     background-color: var(--dark-green);
@@ -70,12 +70,12 @@ header::after {
 
 .logo {
     display: block;
-    width: 128px;
+    width: 88px;
     height: auto;
     margin: 0 auto 1.15rem;
-    padding: 8px;
+    padding: 6px;
     background: var(--white);
-    border-radius: 20px;
+    border-radius: 16px;
     box-shadow: 0 10px 26px rgba(0, 0, 0, .32);
 }
 
@@ -406,7 +406,7 @@ footer p:first-child {
 @media (max-width: 760px) {
 
     header { padding: 2.25rem 1rem 2.75rem; }
-    .logo { width: 104px; }
+    .logo { width: 72px; }
 
     main { padding: 1.5rem .85rem .5rem; }
 
