@@ -1,213 +1,423 @@
+/* ============================================================
+   Football Hub — WDD 131 Site Plan
+   ============================================================ */
+
 :root {
     --dark-green: #0b3d2e;
     --green: #176b4d;
+    --green-tint: #e8f3ee;
     --gold: #f4c542;
+    --gold-dark: #c99a1f;
     --white: #ffffff;
     --light-gray: #f2f4f3;
     --dark-gray: #222222;
+    --muted: #5f6f6a;
+    --line: #dde5e2;
+
+    --radius: 14px;
+    --shadow-sm: 0 1px 2px rgba(11, 61, 46, .06), 0 4px 14px rgba(11, 61, 46, .07);
+    --shadow-md: 0 12px 32px rgba(11, 61, 46, .14);
+
+    --font-head: "Montserrat", "Segoe UI", sans-serif;
+    --font-body: "Roboto", "Segoe UI", sans-serif;
 }
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--font-body);
     color: var(--dark-gray);
     background-color: var(--light-gray);
-    line-height: 1.6;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
 }
 
+::selection {
+    background: var(--gold);
+    color: var(--dark-green);
+}
+
+/* ---------------- Header ---------------- */
+
 header {
-    background-color: var(--dark-green);
-    color: var(--white);
+    position: relative;
+    padding: 3rem 1rem 3.5rem;
     text-align: center;
-    padding: 2rem 1rem;
+    color: var(--white);
+    background-color: var(--dark-green);
+    background-image:
+        radial-gradient(circle at 50% 0%, rgba(23, 107, 77, .95), transparent 65%),
+        repeating-linear-gradient(115deg,
+            rgba(255, 255, 255, .04) 0 2px,
+            transparent 2px 16px);
+    overflow: hidden;
+}
+
+/* Gold pitch-line accent along the bottom edge */
+header::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 5px;
+    background: linear-gradient(90deg,
+        var(--green) 0%,
+        var(--gold) 50%,
+        var(--green) 100%);
 }
 
 .logo {
-    width: 120px;
-    height: auto;
     display: block;
-    margin: 0 auto 0.5rem;
+    width: 128px;
+    height: auto;
+    margin: 0 auto 1.15rem;
+    padding: 8px;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, .32);
 }
 
 header h1 {
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-head);
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: .01em;
     margin: 0;
     color: var(--gold);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .25);
 }
 
 header p {
-    margin-bottom: 0;
+    margin: .55rem 0 0;
+    font-size: .95rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .78);
 }
+
+/* ---------------- Layout ---------------- */
 
 main {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 2.5rem 1rem 1rem;
+    counter-reset: section;
 }
 
 section {
+    counter-increment: section;
+    position: relative;
     background-color: var(--white);
-    margin-bottom: 2rem;
-    padding: 1.5rem;
+    margin-bottom: 1.75rem;
+    padding: 1.9rem 1.75rem;
+    border-radius: var(--radius);
     border-left: 6px solid var(--green);
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-sm);
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
-h2 {
-    font-family: "Montserrat", sans-serif;
+section:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ---------------- Headings ---------------- */
+
+section h2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    margin: 0 0 1.1rem;
+    padding-bottom: .75rem;
+    font-family: var(--font-head);
+    font-size: 1.35rem;
+    font-weight: 700;
     color: var(--dark-green);
-    border-bottom: 3px solid var(--gold);
-    padding-bottom: 0.5rem;
+}
+
+/* Auto-numbered gold badge */
+section h2::before {
+    content: counter(section);
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--dark-green);
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 3px 0 var(--gold-dark);
+}
+
+/* Fading gold underline */
+section h2::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(90deg,
+        var(--gold) 0%,
+        var(--gold) 22%,
+        rgba(244, 197, 66, .12) 100%);
 }
 
 h3 {
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-head);
+    font-size: 1.05rem;
     color: var(--green);
+    margin: 1.4rem 0 .4rem;
 }
 
-ul {
-    padding-left: 1.5rem;
-}
+p { margin: .75rem 0; }
+
+strong { color: var(--dark-green); }
+
+ul { padding-left: 1.35rem; }
 
 li {
-    margin-bottom: 0.6rem;
+    margin-bottom: .6rem;
+    padding-left: .25rem;
 }
 
+li::marker { color: var(--gold); }
+
+/* ---------------- Color Schema ---------------- */
+
 .color-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
     gap: 1rem;
+    margin: 1.25rem 0;
 }
 
 .color-box {
-    flex: 1 1 180px;
-    min-height: 120px;
-    padding: 1rem;
-    border-radius: 8px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    justify-content: space-between;
+    gap: .55rem;
+    min-height: 158px;
+    padding: 1.15rem;
+    border-radius: var(--radius);
+    text-align: left;
     font-weight: 500;
+    box-shadow: var(--shadow-sm);
+    transition: transform .2s ease;
 }
 
-.dark-green {
-    background-color: var(--dark-green);
-    color: var(--white);
+.color-box:hover { transform: translateY(-4px); }
+
+.color-box strong {
+    font-family: var(--font-head);
+    font-size: 1.05rem;
+    letter-spacing: .01em;
+    color: inherit;
 }
 
-.green {
-    background-color: var(--green);
-    color: var(--white);
+.color-box span {
+    align-self: flex-start;
+    padding: .22rem .6rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .24);
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: .78rem;
+    letter-spacing: .06em;
 }
+
+.color-box small {
+    font-size: .79rem;
+    line-height: 1.45;
+    opacity: .92;
+}
+
+.dark-green { background-color: var(--dark-green); color: var(--white); }
+.green      { background-color: var(--green);      color: var(--white); }
 
 .gold {
     background-color: var(--gold);
-    color: var(--dark-gray);
+    color: var(--dark-green);
 }
+.gold span { background: rgba(11, 61, 46, .16); }
 
 .white {
     background-color: var(--white);
     color: var(--dark-gray);
-    border: 2px solid #ddd;
+    border: 2px solid var(--line);
 }
+.white span {
+    background: var(--green-tint);
+    color: var(--dark-green);
+}
+
+/* ---------------- Typography ---------------- */
 
 .typography-example {
-    padding: 1rem;
-    margin: 1rem 0;
-    border-left: 4px solid var(--gold);
-    background-color: var(--light-gray);
+    position: relative;
+    padding: 1.25rem 1.35rem;
+    margin: .9rem 0 1.1rem;
+    border-left: 6px solid var(--gold);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    background: var(--green-tint);
 }
 
-.montserrat {
-    font-family: "Montserrat", sans-serif;
+.typography-example.montserrat {
+    font-family: var(--font-head);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--dark-green);
 }
 
-.roboto {
-    font-family: "Roboto", sans-serif;
+.typography-example.montserrat strong { color: var(--green); }
+
+.typography-example.roboto {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--dark-gray);
 }
+
+/* ---------------- Wireframes ---------------- */
 
 .wireframes {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(230px, 1fr) minmax(340px, 1.65fr);
+    gap: 1.75rem;
+    align-items: start;
+    margin-top: 1.25rem;
 }
 
 .wireframe {
-    flex: 1 1 350px;
-    border: 3px solid var(--dark-green);
+    background: #fbfdfc;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
     padding: 1rem;
-    background-color: #eeeeee;
+    box-shadow: var(--shadow-sm);
 }
 
 .wireframe h3 {
+    margin: 0 0 .85rem;
+    padding-bottom: .5rem;
     text-align: center;
-    margin-top: 0;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px dashed var(--line);
+}
+
+/* Mobile frame — phone bezel */
+.wireframes > .wireframe:nth-child(1) {
+    padding: .9rem;
+    border: 6px solid #1d2b26;
+    border-radius: 28px;
+    background: #f7faf9;
+}
+
+/* Desktop frame — browser chrome */
+.wireframes > .wireframe:nth-child(2)::before {
+    content: "";
+    display: block;
+    height: 28px;
+    margin: -1rem -1rem .9rem;
+    border-bottom: 1px solid var(--line);
+    border-radius: var(--radius) var(--radius) 0 0;
+    background:
+        radial-gradient(circle, #ff5f57 5px, transparent 5.5px) 17px 50% / 12px 12px no-repeat,
+        radial-gradient(circle, #febc2e 5px, transparent 5.5px) 33px 50% / 12px 12px no-repeat,
+        radial-gradient(circle, #28c840 5px, transparent 5.5px) 49px 50% / 12px 12px no-repeat,
+        #eef2f1;
 }
 
 .wf-box {
-    background-color: var(--white);
-    border: 2px solid var(--green);
-    margin: 0.5rem 0;
-    padding: 1rem;
+    margin: .5rem 0;
+    padding: .8rem .6rem;
+    border: 2px dashed #c3d6cf;
+    border-radius: 9px;
+    background: var(--white);
     text-align: center;
+    font-size: .85rem;
     font-weight: 500;
+    color: var(--muted);
 }
 
 .wf-header {
-    background-color: var(--dark-green);
+    background: var(--dark-green);
+    border: 2px solid var(--dark-green);
     color: var(--white);
+    font-weight: 700;
 }
 
 .wf-highlight {
-    background-color: var(--gold);
+    background: var(--gold);
+    border: 2px solid var(--gold-dark);
+    color: var(--dark-green);
+    font-weight: 700;
 }
 
 .desktop-columns {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 0.5rem;
+    gap: .6rem;
 }
+
+.desktop-columns > div { display: flex; flex-direction: column; }
+.desktop-columns > div > .wf-box:first-child { margin-top: 0; }
+
+/* ---------------- Footer ---------------- */
 
 footer {
-    background-color: var(--dark-green);
-    color: var(--white);
+    position: relative;
+    margin-top: 1.5rem;
+    padding: 2rem 1rem;
     text-align: center;
-    padding: 1.5rem;
+    background: var(--dark-green);
+    color: rgba(255, 255, 255, .82);
 }
 
-@media (max-width: 600px) {
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--green), var(--gold));
+}
 
-    header {
-        padding: 1.5rem 1rem;
-    }
+footer p {
+    margin: .3rem 0;
+    font-size: .9rem;
+}
 
-    header h1 {
-        font-size: 1.8rem;
-    }
+footer p:first-child {
+    font-family: var(--font-head);
+    font-weight: 600;
+    color: var(--white);
+}
 
-    main {
-        padding: 1rem;
-    }
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 760px) {
+
+    header { padding: 2.25rem 1rem 2.75rem; }
+    .logo { width: 104px; }
+
+    main { padding: 1.5rem .85rem .5rem; }
 
     section {
-        padding: 1rem;
+        padding: 1.4rem 1.15rem;
+        border-left-width: 5px;
     }
 
-    .wireframes {
-        display: block;
-    }
+    section h2 { font-size: 1.15rem; }
+    section h2::before { width: 1.95rem; height: 1.95rem; font-size: .9rem; }
 
-    .wireframe {
-        margin-bottom: 1.5rem;
-    }
+    .wireframes { grid-template-columns: 1fr; }
+    .desktop-columns { grid-template-columns: 1fr; }
 
-    .desktop-columns {
-        display: block;
-    }
+    .typography-example.montserrat { font-size: 1.15rem; }
 }
