@@ -1,3 +1,4 @@
+console.log("Football Hub JavaScript is running!");
 
 const teams = [
     {
