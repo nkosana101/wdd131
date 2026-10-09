@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore football teams from England, Spain, and South Africa. Filter clubs by league and discover their stories on Football Hub.">
+    <meta name="author" content="Nkosana Dlamini">
+    <title>Football Hub | Teams</title>
+    <link rel="stylesheet" href="styles/project.css">
+    <script src="scripts/project.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html">Football Hub</a>
+
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="teams.html" aria-current="page">Teams</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-heading">
+            <h1>Explore Football Teams</h1>
+            <p>
+                Discover clubs, explore different leagues, and choose
+                your favourite team.
+            </p>
+        </section>
+
+        <section class="team-directory">
+            <h2>Find Your Team</h2>
+
+            <label for="league-filter">Filter teams by league:</label>
+            <select id="league-filter" name="league-filter">
+                <option value="all">All Leagues</option>
+                <option value="Premier League">Premier League</option>
+                <option value="La Liga">La Liga</option>
+                <option value="South African Premiership">
+                    South African Premiership
+                </option>
+            </select>
+
+            <p id="team-count" aria-live="polite"></p>
+
+            <div id="all-teams" class="team-grid">
+                <p>Loading teams...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Football Hub</p>
+        <a href="references.html">References</a>
+        <p>Created for WDD 131 by Nkosana Dlamini</p>
+    </footer>
+</body>
+</html>
