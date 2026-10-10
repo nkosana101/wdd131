@@ -152,9 +152,11 @@ function setupLeagueFilter() {
 
 function displaySavedTeam() {
     const savedTeam = localStorage.getItem("footballHubTeam");
+    const output = document.querySelector("#saved-team");
+    if (!output) return;
 
     if (savedTeam) {
-        console.log(`Your saved favourite team is ${savedTeam}.`);
+        output.textContent = `Your saved favourite team is ${savedTeam}.`;
     }
 }
 
