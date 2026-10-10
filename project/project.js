@@ -1,3 +1,5 @@
+
+
 console.log("Football Hub JavaScript is running!");
 
 const teams = [
@@ -50,6 +52,7 @@ const allTeamsContainer = document.querySelector("#all-teams");
 const leagueFilter = document.querySelector("#league-filter");
 const teamCount = document.querySelector("#team-count");
 const currentYear = document.querySelector("#current-year");
+const savedTeamOutput = document.querySelector("#saved-team");
 
 function createTeamCard(team) {
     return `
@@ -103,20 +106,25 @@ function displayAllTeams(selectedLeague = "all") {
     }
 
     if (teamCount) {
-        teamCount.textContent =
-            `Showing ${filteredTeams.length} of ${teams.length} teams`;
+        if (selectedLeague === "all") {
+            teamCount.textContent = `Showing all ${teams.length} teams.`;
+        } else {
+            const label = filteredTeams.length === 1 ? "team" : "teams";
+            teamCount.textContent =
+                `Showing ${filteredTeams.length} ${label} in ${selectedLeague}.`;
+        }
     }
 }
 
 function saveSelectedTeam(teamName) {
     const selectedTeam = teams.find((team) => team.name === teamName);
 
-    if (selectedTeam) {
-        localStorage.setItem("footballHubTeam", selectedTeam.name);
-        alert(`You selected ${selectedTeam.name}!`);
-    } else {
-        alert("Please choose a valid team.");
+    if (!selectedTeam) {
+        return;
     }
+
+    localStorage.setItem("footballHubTeam", selectedTeam.name);
+    displaySavedTeam();
 }
 
 function setupTeamSelection() {
@@ -151,13 +159,15 @@ function setupLeagueFilter() {
 }
 
 function displaySavedTeam() {
-    const savedTeam = localStorage.getItem("footballHubTeam");
-    const output = document.querySelector("#saved-team");
-    if (!output) return;
-
-    if (savedTeam) {
-        output.textContent = `Your saved favourite team is ${savedTeam}.`;
+    if (!savedTeamOutput) {
+        return;
     }
+
+    const savedTeam = localStorage.getItem("footballHubTeam");
+
+    savedTeamOutput.textContent = savedTeam
+        ? `Your favourite team: ${savedTeam}`
+        : `No favourite team selected yet.`;
 }
 
 function displayCurrentYear() {
@@ -166,3 +176,8 @@ function displayCurrentYear() {
     }
 }
 
+displayFeaturedTeams();
+setupLeagueFilter();
+setupTeamSelection();
+displaySavedTeam();
+displayCurrentYear();

@@ -12,13 +12,15 @@
 </head>
 <body>
     <header>
-        <a class="logo" href="index.html">Football Hub</a>
+        <div class="header-inner">
+            <a class="logo" href="index.html">Football Hub</a>
 
-        <nav aria-label="Main navigation">
-            <a href="index.html">Home</a>
-            <a href="teams.html" aria-current="page">Teams</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="teams.html" aria-current="page">Teams</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -53,7 +55,10 @@
 
     <footer>
         <p>&copy; <span id="current-year"></span> Football Hub</p>
-        <a href="references.html">References</a>
+        <p id="saved-team" class="saved-team" aria-live="polite"></p>
+        <nav aria-label="Footer navigation">
+            <a href="references.html">References</a>
+        </nav>
         <p>Created for WDD 131 by Nkosana Dlamini</p>
     </footer>
 </body>

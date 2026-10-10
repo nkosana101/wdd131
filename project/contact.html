@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Football Hub with questions, feedback, or team suggestions. We'd love to hear from you.">
+    <meta name="author" content="Nkosana Dlamini">
+    <title>Football Hub | Contact</title>
+    <link rel="stylesheet" href="styles/project.css">
+    <script src="scripts/project.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a class="logo" href="index.html">Football Hub</a>
+
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="teams.html">Teams</a>
+                <a href="contact.html" aria-current="page">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-heading">
+            <h1>Get in Touch</h1>
+            <p>
+                Have a question, a team suggestion, or feedback about
+                Football Hub? Send us a message and we'll get back to you.
+            </p>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-info">
+                <h2>Contact Details</h2>
+                <p>
+                    You can also reach us directly using the details below.
+                </p>
+
+                <ul class="contact-list">
+                    <li>
+                        <strong>Email:</strong>
+                        <a href="mailto:hello@footballhub.example">
+                            hello@footballhub.example
+                        </a>
+                    </li>
+                    <li>
+                        <strong>Phone:</strong>
+                        <a href="tel:+27 61 464 5837">+27 61 464 5837</a>
+                    </li>
+                    <li>
+                        <strong>Address:</strong>
+                        123 Stadium Road, Johannesburg, South Africa
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <h2>Send a Message</h2>
+
+                <form id="contact-form" novalidate>
+                    <div class="form-field">
+                        <label for="name">Full Name</label>
+                        <input type="text"
+                               id="name"
+                               name="name"
+                               required
+                               autocomplete="name"
+                               placeholder="Your full name">
+                        <span class="error-message" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="email">Email Address</label>
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               required
+                               autocomplete="email"
+                               placeholder="you@example.com">
+                        <span class="error-message" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">-- Choose a subject --</option>
+                            <option value="general">General Enquiry</option>
+                            <option value="team">Team Suggestion</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="bug">Report a Problem</option>
+                        </select>
+                        <span class="error-message" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="message">Message</label>
+                        <textarea id="message"
+                                  name="message"
+                                  rows="6"
+                                  required
+                                  minlength="10"
+                                  placeholder="Tell us what's on your mind (at least 10 characters)"></textarea>
+                        <span class="error-message" aria-live="polite"></span>
+                    </div>
+
+                    <button class="button" type="submit">Send Message</button>
+
+                    <p id="form-status"
+                       class="form-status"
+                       role="status"
+                       aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Football Hub</p>
+        <p id="saved-team" class="saved-team" aria-live="polite"></p>
+        <nav aria-label="Footer navigation">
+            <a href="references.html">References</a>
+        </nav>
+        <p>Created for WDD 131 by Nkosana Dlamini</p>
+    </footer>
+</body>
+</html>
