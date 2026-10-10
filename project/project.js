@@ -164,9 +164,3 @@ function displayCurrentYear() {
     }
 }
 
-displayFeaturedTeams();
-displayAllTeams();
-setupLeagueFilter();
-setupTeamSelection();
-displaySavedTeam();
-displayCurrentYear();
